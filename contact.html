@@ -74,10 +74,11 @@
 
 
       <footer class="footer">
-        <p>&copy; Christian Hatch 2014</p>
+      <p>&copy; Christian Hatch <span id="year"></span></p>
       </footer>
 
     </div> <!-- /container -->
+	<script>document.getElementById("year").innerHTML = new Date().getFullYear(); </script>
   </body>
 </html>
 
