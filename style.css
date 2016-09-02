@@ -16,10 +16,15 @@ iframe{
 	border-radius: 20px;
 }
 
-.profile-image{
+.profile-image img{
 	margin: 35px;
+	border-radius: 3px;
 }
 
 .nav-pills{
 	color: #26c0e2;
+}
+
+.footer{
+	text-align: center;
 }
