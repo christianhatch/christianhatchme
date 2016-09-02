@@ -22,8 +22,22 @@ iframe{
 	border-radius: 3px;
 }
 
-.nav-pills{
+/*.nav-pills{
 	color: #f75d59;
+}
+*/
+/*
+.nav-pills>li.active>a{
+  background-color: #f75d5 !important;
+}
+*/
+
+/*.nav-pills > .active > a, .nav-pills > .active > a:hover {
+    background-color: red;
+}
+*/
+.nav-pills>li.active>a{
+  background-color: orange !important;
 }
 
 .footer{
