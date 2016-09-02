@@ -17,12 +17,13 @@ iframe{
 }
 
 .profile-image img{
-	margin: 35px;
+	margin: 0px;
+	margin-bottom: 10px;
 	border-radius: 3px;
 }
 
 .nav-pills{
-	color: #26c0e2;
+	color: #f75d59;
 }
 
 .footer{

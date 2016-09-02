@@ -39,7 +39,7 @@
         	<img src="img/chatch.jpg">
         </div>
 
-        <p class="lead">So Sorry! I couldn't seem to find what you were looking for. Perhaps you'd like to go <a href="index.html" />home</a>?</p>
+        <p class="lead">So Sorry! I couldn't seem to find what you were looking for. Perhaps you'd like to go <a href="index.html"/>home</a>?</p>
       </div>
 
       <footer class="footer">
