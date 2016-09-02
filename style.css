@@ -29,6 +29,11 @@ iframe{
 a {
 	color: #f75d59;
 }
+
+a:hover{
+	color: #BF4845;
+}
+
 .nav-pills>li.active>a{
 	background-color: #f75d59;
 }
