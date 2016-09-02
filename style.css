@@ -22,22 +22,23 @@ iframe{
 	border-radius: 3px;
 }
 
-/*.nav-pills{
+.nav>li>a{
 	color: #f75d59;
 }
-*/
-/*
-.nav-pills>li.active>a{
-  background-color: #f75d5 !important;
-}
-*/
 
-/*.nav-pills > .active > a, .nav-pills > .active > a:hover {
-    background-color: red;
+a {
+	color: #f75d59;
 }
-*/
 .nav-pills>li.active>a{
-  background-color: orange !important;
+	background-color: #f75d59;
+}
+
+.nav-pills > .active > a, .nav-pills > .active > a:hover {
+    background-color: #f75d59;
+}
+
+.nav-pills > li.active > a:hover{
+    background-color: #f75d59;
 }
 
 .footer{
