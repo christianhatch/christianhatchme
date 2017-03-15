@@ -1,103 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Christian Hatch</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
 
-    <!-- Bootstrap core CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <title>Christian Hatch</title>
 
-	<!-- My own CSS -->
-	<link rel="stylesheet" href="style.css">
-
-    <!-- Custom styles for this template -->
-    <link href="jumbotron-narrow.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="jumbotron-narrow.css" rel="stylesheet">
+</head>
 
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
+<body>
+  <div class="container">
+    <div class="header clearfix">
+      <nav>
+        <ul class="nav nav-pills pull-right">
+         <li role="presentation"><a href="/">Home</a></li>
+         <li role="presentation"><a href="apps.html">Apps</a></li>
+         <li role="presentation" class="active"><a href="opensource.html">Open Source</a></li>
+         <li role="presentation"><a href="blog.html">Blog</a></li>
+         <li role="presentation"><a href="contact.html">Contact</a></li>
+       </ul>
+     </nav>
+     <h3 class="text-muted">Christian Hatch</h3>
+   </div>
 
+   <div class="apps">
+     <div class="row">
 
-
-  <body>
-    <div class="container">
-      <div class="header clearfix">
-        <nav>
-          <ul class="nav nav-pills pull-right">
-           <li role="presentation"><a href="/">Home</a></li>
-           <li role="presentation"><a href="apps.html">Apps</a></li>
-	         <li role="presentation" class="active"><a href="opensource.html">Open Source</a></li>
-           <li role="presentation"><a href="blog.html">Blog</a></li>
-	         <li role="presentation"><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-        <h3 class="text-muted">Christian Hatch</h3>
-      </div>
-
-       <div class="apps">
-       	   <div class="row">
-
-          <div class="col-lg-6">
-
-		        <a href="http://bit.ly/simpleImageSlider" target="new"><img src="img/simple_image_slider.png"></a>
-		        <a href="http://bit.ly/simpleImageSlider" target="new"><h4>SimpleImageSlider</h4></a>
-		        <p>SimpleImageSlider is an open source iOS library available via <a href="https://cocoapods.org/pods/SimpleImageSlider">CocoaPods</a> to create a scrollable gallery of images, loaded from UIImages or NSURLs. Great for use in a tableview header, and there's an optional parallax/'stretchy header' effect 🙊 </p>
-
-			    </div>
-
-	     <div class="col-lg-6">
-
-				<a href="http://bit.ly/EmailPicker" target="new"> <img src="img/emailpicker.png"></a>
-		        <a href="http://bit.ly/EmailPicker" target="new"><h4>EmailPicker</h4></a>
-		        <p>EmailPicker is an open source iOS library available via CocoaPods that I made at <a href="https://engineering.dockwa.com/">Dockwa</a>. It is a simple viewcontroller to let a user choose emails by typing them in or choosing from their contacts. 100% Swift. All-in-one solution for your email picking needs!</p>
-	        </div>
-
-	      </div>
-
-    <hr>
-
-        <div class="row">
-
-          <div class="col-lg-6">
-
-            <a href="http://bit.ly/rgbRemote" target="new"><img src="img/rgb_remote.png"></a>
-            <a href="http://bit.ly/rgbRemote" target="new"><h4>RGB Remote</h4></a>
-            <p>RGB Remote is an open source app I am developing that allows me to control RGB LED strip lights by communicating with a REST server on a Raspberry Pi hooked up to an IR blaster. Feel free to fork and modify to suit your needs!</p>
-
+      <div class="col-lg-6">
+        <a href="http://bit.ly/simpleImageSlider" target="new"><img src="img/simple_image_slider.png"></a>
+        <a href="http://bit.ly/simpleImageSlider" target="new"><h4>SimpleImageSlider</h4></a>
+        <p>SimpleImageSlider is an open source iOS library available via <a href="https://cocoapods.org/pods/SimpleImageSlider">CocoaPods</a> to create a scrollable gallery of images, loaded from UIImages or NSURLs. Great for use in a tableview header, and there's an optional parallax/'stretchy header' effect 🙊 </p>
       </div>
 
       <div class="col-lg-6">
-
-        <a href="http://bit.ly/derulo-swift" target="new"><img src="img/derulo.png"></a>
-        <a href="http://bit.ly/derulo-swift" target="new"><h4>Derulo</h4></a>
-        <p>Derulo is a flexible collection of Swift mixins to organize and manage translating between JSON and native Swift objects. Designed to give your model objects a consistent JSON conversion / mapping / caching / offline strategy without getting in your way. Simple, straightforward, and lightweight.</p>
-
+        <a href="http://bit.ly/EmailPicker" target="new"> <img src="img/emailpicker.png"></a>
+        <a href="http://bit.ly/EmailPicker" target="new"><h4>EmailPicker</h4></a>
+        <p>EmailPicker is an open source iOS library available via CocoaPods that I made at <a href="https://engineering.dockwa.com/">Dockwa</a>. It is a simple viewcontroller to let a user choose emails by typing them in or choosing from their contacts. 100% Swift. All-in-one solution for your email picking needs!</p>
       </div>
-
 
     </div>
 
     <hr>
 
+    <div class="row">
 
-       </div>
+      <div class="col-lg-6">
+        <a href="http://bit.ly/rgbRemote" target="new"><img src="img/rgb_remote.png"></a>
+        <a href="http://bit.ly/rgbRemote" target="new"><h4>RGB Remote</h4></a>
+        <p>RGB Remote is an open source app I am developing that allows me to control RGB LED strip lights by communicating with a REST server on a Raspberry Pi hooked up to an IR blaster. Feel free to fork and modify to suit your needs!</p>
+      </div>
 
-      <footer class="footer">
-      <p>&copy; Christian Hatch <span id="year"></span></p>
-      </footer>
+      <div class="col-lg-6">
+        <a href="http://bit.ly/derulo-swift" target="new"><img src="img/derulo.png"></a>
+        <a href="http://bit.ly/derulo-swift" target="new"><h4>Derulo</h4></a>
+        <p>Derulo is a flexible collection of Swift mixins to organize and manage translating between JSON and native Swift objects. Designed to give your model objects a consistent JSON conversion / mapping / caching / offline strategy without getting in your way. Simple, straightforward, and lightweight.</p>
+      </div>
 
-    </div> <!-- /container -->
-	<script>document.getElementById("year").innerHTML = new Date().getFullYear(); </script>
-  </body>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <p>&copy; Christian Hatch <span id="year"></span></p>
+  </footer>
+
+</div> <!-- /container -->
+<script>document.getElementById("year").innerHTML = new Date().getFullYear(); </script>
+</body>
 </html>
