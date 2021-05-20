@@ -1,67 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="icon" href="../../favicon.ico">
-
-  <title>Christian Hatch</title>
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
-  <link href="jumbotron-narrow.css" rel="stylesheet">
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-52355908-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-52355908-1');
-  </script>
-</head>
-
-<body>
-
-  <div class="container">
-    <div class="header clearfix">
-      <nav>
-        <ul class="nav nav-pills pull-right">
-          <li role="presentation" class="active"><a href="/">Home</a></li>
-          <li role="presentation"><a href="apps.html">Apps</a></li>
-          <li role="presentation"><a href="opensource.html">Open Source</a></li>
-          <li role="presentation"><a href="https://christianhatch.me/">Photography</a></li>
-          <li role="presentation"><a href="contact.html">Contact</a></li>
-        </ul>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../../favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">    <link rel="stylesheet" href="style.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-52355908-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-52355908-1');
+    </script>
+    <title>Christian Hatch</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light mt-2 mb-4">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand text-muted fw-bolder fs-4" href="index.html">Christian Hatch</a>
+          <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+            <ul class="nav nav-pills mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="apps.html">Apps</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="opensource.html">Open Source</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://christianhatch.me/">Photograhy</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </nav>
-      <h3 class="text-muted">Christian Hatch</h3>
+      <div class="d-flex justify-content-center">
+        <div class="rounded-3 bg-gray p-4 fs-5 fw-normal" style="max-width: 700px">
+          <div class="profile-image">
+            <img src="img/chatch.jpg" alt="Christian Hatch Headshot Photo">
+          </div>
+          <h2>Hey there stranger</h2>
+          <p class="lead">It's very nice to meet you 😊</p>
+          <p> I'm an iOS/Android/full stack web developer and human being. I make <a href="apps.html">apps</a>,<a href="opensource.html"> open source</a> goodies, and I'm passionate about making clean, simple, and trustworthy products.</p>
+          <p>When I'm not building software, I like to take <a href="https://christianhatch.me/">photos</a>.</p>
+          <p>Welcome to my website! I made it by hand, with love and care, just for you.</p>
+          <p>❤️</p>
+          <p>Christian</p>
+        </div>
+      </div>
+      <footer class="footer text-center">
+        <p>&copy; Christian Hatch <span id="year"></span></p>
+      </footer>
     </div>
-
-    <div class="jumbotron">
-      <div class="profile-image">
-       <img src="img/chatch.jpg">
-     </div>
-
-    <h2>Hey there stranger,</h2>
-    <p class="lead">It's very nice to meet you 😊</p>
-    <br>
-    <p> I'm an iOS/Android/full stack web developer and human being. I make <a href="apps.html">apps</a>,<a href="opensource.html"> open source</a> goodies, and I'm passionate about making clean, simple, and trustworthy products.</p>
-    <p>When I'm not building software, I like to take <a href="https://christianhatch.me/">photos</a>.</p>
-    <p>Welcome to my website! I made it by hand, with love and care, just for you.</p>
-    <br>
-    <p>❤️</p>
-    <p>Christian</p>
-   </div>
-
-   <footer class="footer">
-    <p>&copy; Christian Hatch <span id="year"></span></p>
-  </footer>
-
-</div> <!-- /container -->
-<script>document.getElementById("year").innerHTML = new Date().getFullYear(); </script>
-</body>
+    <script>document.getElementById("year").innerHTML = new Date().getFullYear();</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+  </body>
 </html>
 

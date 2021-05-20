@@ -1,87 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="icon" href="../../favicon.ico">
-
-  <title>Christian Hatch</title>
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
-  <link href="jumbotron-narrow.css" rel="stylesheet">
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-52355908-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-52355908-1');
-  </script>
-</head>
-
-
-<body>
-  <div class="container">
-    <div class="header clearfix">
-      <nav>
-        <ul class="nav nav-pills pull-right">
-         <li role="presentation"><a href="/">Home</a></li>
-         <li role="presentation"><a href="apps.html">Apps</a></li>
-         <li role="presentation" class="active"><a href="opensource.html">Open Source</a></li>
-            <li role="presentation"><a href="https://christianhatch.me/">Photography</a></li>
-         <li role="presentation"><a href="contact.html">Contact</a></li>
-       </ul>
-     </nav>
-     <h3 class="text-muted">Christian Hatch</h3>
-   </div>
-
-   <div class="apps">
-     <div class="row">
-
-      <div class="col-lg-6">
-        <a href="http://bit.ly/simpleImageSlider" target="new"><img src="img/simple_image_slider.png"></a>
-        <a href="http://bit.ly/simpleImageSlider" target="new"><h4>SimpleImageSlider</h4></a>
-        <p>SimpleImageSlider is an open source iOS library available via <a href="https://cocoapods.org/pods/SimpleImageSlider">CocoaPods</a> to create a scrollable gallery of images, loaded from UIImages or NSURLs. Great for use in a tableview header, and there's an optional parallax/'stretchy header' effect 🙊 </p>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../../favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-52355908-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-52355908-1');
+    </script>
+    <title>Christian Hatch - Open Source</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light mt-2 mb-4">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand text-muted fw-bolder fs-4" href="index.html">Christian Hatch</a>
+          <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+            <ul class="nav nav-pills mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="apps.html">Apps</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="opensource.html">Open Source</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://christianhatch.me/">Photograhy</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card">
+            <a href="http://bit.ly/simpleImageSlider"><img src="img/simple_image_slider.png" class="card-img-top" alt="SimpleImageSlider"></a>
+            <div class="card-body">
+              <h5 class="card-title">SimpleImageSlider</h5>
+              <p class="card-text">SimpleImageSlider is an open source iOS library <a href="https://cocoapods.org/pods/SimpleImageSlider">available via CocoaPods</a> to create a scrollable gallery of images.</p>
+              <iframe src="https://ghbtns.com/github-btn.html?user=christianhatch&repo=SimpleImageSlider&type=star&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <a href="http://bit.ly/EmailPicker"><img src="img/emailpicker.png" class="card-img-top" alt="EmailPicker"></a>
+            <div class="card-body">
+              <h5 class="card-title">EmailPicker</h5>
+              <p class="card-text">EmailPicker is an open source iOS library <a href="https://cocoapods.org/pods/EmailPicker">available via CocoaPods</a> made by me at <a href="https://engineering.dockwa.com/">Dockwa Engineering</a>. It is a UIViewController to make it easy for a user to select a list of emails by typing or choosing from their contacts.</p>
+              <iframe src="https://ghbtns.com/github-btn.html?user=dockwa&repo=EmailPicker&type=star&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <a href="http://bit.ly/rgbRemote"><img src="img/rgb_remote.png" class="card-img-top" alt="RGB Remote"></a>
+            <div class="card-body">
+              <h5 class="card-title">RGB Remote</h5>
+              <p class="card-text">RGB Remote is an open source app that enables control of RGB LED strip lights by communicating with a server hosted on a Raspberry Pi running <a href="https://www.lirc.org/">LIRC</a> to control an IR blaster. Fork and modify to suit your needs!</p>
+              <iframe src="https://ghbtns.com/github-btn.html?user=christianhatch&repo=RGB-Remote&type=star&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div class="col-lg-6">
-        <a href="http://bit.ly/EmailPicker" target="new"> <img src="img/emailpicker.png"></a>
-        <a href="http://bit.ly/EmailPicker" target="new"><h4>EmailPicker</h4></a>
-        <p>EmailPicker is an open source iOS library available via CocoaPods that I made at <a href="https://engineering.dockwa.com/">Dockwa</a>. It is a simple viewcontroller to let a user choose emails by typing them in or choosing from their contacts. 100% Swift. All-in-one solution for your email picking needs!</p>
-      </div>
-
+      <footer class="footer">
+        <p>&copy; Christian Hatch <span id="year"></span></p>
+      </footer>
     </div>
-
-    <hr>
-
-    <div class="row">
-
-      <div class="col-lg-6">
-        <a href="http://bit.ly/rgbRemote" target="new"><img src="img/rgb_remote.png"></a>
-        <a href="http://bit.ly/rgbRemote" target="new"><h4>RGB Remote</h4></a>
-        <p>RGB Remote is an open source app that allows control of RGB LED strip lights by communicating with a server hosted on a Raspberry Pi running software to control an IR blaster. Feel free to fork and modify to suit your needs!</p>
-      </div>
-
-<!--      <div class="col-lg-6">-->
-<!--        <a href="http://bit.ly/derulo-swift" target="new"><img src="img/derulo.png"></a>-->
-<!--        <a href="http://bit.ly/derulo-swift" target="new"><h4>Derulo</h4></a>-->
-<!--        <p>Derulo is a flexible collection of Swift mixins to organize and manage translating between JSON and native Swift objects. Designed to give your model objects a consistent JSON conversion / mapping / caching / offline strategy without getting in your way. Simple, straightforward, and lightweight.</p>-->
-<!--      </div>-->
-
-    </div>
-
-  </div>
-
-  <footer class="footer">
-    <p>&copy; Christian Hatch <span id="year"></span></p>
-  </footer>
-
-</div> <!-- /container -->
-<script>document.getElementById("year").innerHTML = new Date().getFullYear(); </script>
-</body>
+    <script>document.getElementById("year").innerHTML = new Date().getFullYear();</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+  </body>
 </html>
