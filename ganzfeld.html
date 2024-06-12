@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ganzfeld Effect</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        #color-box {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="color-box"></div>
+<script>
+    const colors = ["red", "green", "blue", "orange", "yellow", "cyan", "indigo"];
+    const colorBox = document.getElementById('color-box');
+
+    let index = 0;
+
+    function changeColor() {
+        colorBox.style.backgroundColor = colors[index];
+        index = (index + 1) % colors.length;
+    }
+
+    function toggleFullScreen() {
+        if (!document.fullscreenElement) {
+            colorBox.requestFullscreen().catch(err => {
+                alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+            });
+        } else {
+            document.exitFullscreen();
+        }
+    }
+
+    colorBox.addEventListener('dblclick', toggleFullScreen);
+    setInterval(changeColor, 10); // 0.01 seconds = 10 milliseconds
+</script>
+</body>
+</html>
