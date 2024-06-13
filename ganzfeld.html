@@ -34,12 +34,18 @@
     }
 
     function toggleFullScreen() {
-        if (!document.fullscreenElement) {
-            colorBox.requestFullscreen().catch(err => {
-                alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
-            });
+        if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+            if (colorBox.requestFullscreen) {
+                colorBox.requestFullscreen();
+            } else if (colorBox.webkitRequestFullscreen) {
+                colorBox.webkitRequestFullscreen();
+            }
         } else {
-            document.exitFullscreen();
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            }
         }
     }
 
