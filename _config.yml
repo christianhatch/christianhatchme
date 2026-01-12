@@ -1,1 +1,26 @@
-theme: jekyll-theme-minimal
+# Site Configuration
+title: Christian Hatch
+description: iOS/Android/full stack web developer. I make apps, open source goodies, and I'm passionate about making clean, simple, and trustworthy products.
+author: Christian Hatch
+url: https://chatch.me
+baseurl: ""
+
+# GitHub Pages Configuration
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Build Settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

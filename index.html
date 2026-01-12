@@ -1,66 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="../../favicon.ico">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">    <link rel="stylesheet" href="style.css">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-52355908-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-52355908-1');
-    </script>
-    <title>Christian Hatch</title>
-  </head>
-  <body>
-    <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-light mt-2 mb-4">
-        <div class="container-fluid">
-          <div class="collapse navbar-collapse d-flex" id="navbarSupportedContent">
-            <ul class="nav nav-pills mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="apps.html">Apps</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="opensource.html">Open Source</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://chatch.me/">Photograhy</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
-              </li>
-            </ul>
-          </div>
-          <a class="navbar-brand text-muted fw-bolder fs-4" href="index.html">Christian Hatch</a>
+---
+layout: home
+title: Home
+description: iOS/Android/full stack web developer. I make apps, open source goodies, and I'm passionate about making clean, simple, and trustworthy products.
+---
+
+<div class="py-12 md:py-16">
+  <div class="max-w-3xl mx-auto">
+    <!-- Hero Section -->
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm dark:shadow-gray-900/50 p-8 md:p-12 mb-8">
+      <div class="flex flex-col items-center text-center">
+        <div class="mb-8 transform transition-transform duration-300 hover:scale-105">
+          <img src="/img/chatch.jpg" alt="Christian Hatch Headshot Photo" class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover shadow-lg ring-4 ring-white dark:ring-gray-800">
         </div>
-      </nav>
-      <div class="d-flex justify-content-center">
-        <div class="rounded-3 bg-gray p-4 fs-5 fw-normal" style="max-width: 700px">
-          <div class="profile-image">
-            <img src="img/chatch.jpg" alt="Christian Hatch Headshot Photo">
-          </div>
-          <h2>Hey there stranger</h2>
-          <p class="lead">It's very nice to meet you 😊</p>
-          <p> I'm an iOS/Android/full stack web developer and human being. I make <a href="apps.html">apps</a>,<a href="opensource.html"> open source</a> goodies, and I'm passionate about making clean, simple, and trustworthy products.</p>
-          <p>When I'm not building software, I like to take <a href="https://chatch.me/">photos</a>.</p>
-          <p>Welcome to my website! I made it by hand, with love and care, just for you.</p>
-          <p>❤️</p>
-          <p>Christian</p>
+
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+          Hey there stranger
+        </h1>
+
+        <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-6">
+          It's very nice to meet you 😊
+        </p>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none text-left text-gray-700 dark:text-gray-300 space-y-4">
+          <p>
+            I'm an iOS/Android/full stack web developer and human being. I make
+            <a href="/apps" class="text-accent hover:text-accent-dark font-medium transition-colors duration-200">apps</a>,
+            <a href="/opensource" class="text-accent hover:text-accent-dark font-medium transition-colors duration-200">open source</a>
+            goodies, and I'm passionate about making clean, simple, and trustworthy products.
+          </p>
+
+          <p>
+            When I'm not building software, I like to take
+            <a href="https://chatch.me/" class="text-accent hover:text-accent-dark font-medium transition-colors duration-200">photos</a>.
+          </p>
+
+          <p>
+            Welcome to my website! I made it by hand, with love and care, just for you.
+          </p>
+
+          <p class="text-2xl text-center pt-4">❤️</p>
+
+          <p class="text-center font-semibold text-gray-900 dark:text-gray-100">Christian</p>
         </div>
       </div>
-      <footer class="footer text-center">
-        <p>&copy; Christian Hatch <span id="year"></span></p>
-      </footer>
     </div>
-    <script>document.getElementById("year").innerHTML = new Date().getFullYear();</script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
-  </body>
-</html>
 
+    <!-- Quick Links -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <a href="/apps" class="bg-white dark:bg-gray-800 rounded-xl shadow-sm dark:shadow-gray-900/50 p-6 hover:shadow-lg dark:hover:shadow-gray-900/70 hover:-translate-y-1 transition-all duration-300 group">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 group-hover:text-accent transition-colors duration-200">Apps</h3>
+        <p class="text-gray-600 dark:text-gray-400 text-sm">Check out my mobile and web applications</p>
+      </a>
+
+      <a href="/opensource" class="bg-white dark:bg-gray-800 rounded-xl shadow-sm dark:shadow-gray-900/50 p-6 hover:shadow-lg dark:hover:shadow-gray-900/70 hover:-translate-y-1 transition-all duration-300 group">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 group-hover:text-accent transition-colors duration-200">Open Source</h3>
+        <p class="text-gray-600 dark:text-gray-400 text-sm">Explore my open source contributions</p>
+      </a>
+
+      <a href="/contact" class="bg-white dark:bg-gray-800 rounded-xl shadow-sm dark:shadow-gray-900/50 p-6 hover:shadow-lg dark:hover:shadow-gray-900/70 hover:-translate-y-1 transition-all duration-300 group">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 group-hover:text-accent transition-colors duration-200">Contact</h3>
+        <p class="text-gray-600 dark:text-gray-400 text-sm">Get in touch with me</p>
+      </a>
+    </div>
+  </div>
+</div>
