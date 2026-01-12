@@ -1,14 +1,10 @@
 <nav class="border-b border-gray-200 dark:border-gray-700 mb-8">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
-      <!-- Mobile menu button -->
-      <div class="md:hidden">
-        <button type="button" class="text-gray-700 dark:text-gray-300 hover:text-accent focus:outline-none focus:text-accent" id="mobile-menu-button" aria-label="Toggle menu">
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
+      <!-- Brand -->
+      <a href="/" class="text-xl font-bold text-gray-800 dark:text-gray-200 hover:text-accent transition-colors duration-200">
+        Christian Hatch
+      </a>
 
       <!-- Desktop Navigation -->
       <div class="hidden md:flex md:items-center md:space-x-1">
@@ -30,10 +26,14 @@
         {% endfor %}
       </div>
 
-      <!-- Brand -->
-      <a href="/" class="text-xl font-bold text-gray-800 dark:text-gray-200 hover:text-accent transition-colors duration-200">
-        Christian Hatch
-      </a>
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button type="button" class="text-gray-700 dark:text-gray-300 hover:text-accent focus:outline-none focus:text-accent" id="mobile-menu-button" aria-label="Toggle menu">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
     </div>
 
     <!-- Mobile Navigation -->
