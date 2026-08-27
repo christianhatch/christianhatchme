@@ -118,7 +118,9 @@ p{margin:0 0 1em}
 .hero__grid{display:grid;grid-template-columns:1fr;gap:36px}
 @media(min-width:900px){.hero__grid{grid-template-columns:1.12fr .72fr;gap:60px;align-items:end}}
 .hero__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
-.hero__note{font-size:15px;line-height:1.85;color:var(--ink-70);background:var(--surface-2);border-radius:var(--r);padding:26px 28px;box-shadow:var(--shadow)}
+.hero__note{font-size:16px;line-height:1.72;color:var(--ink-70);background:var(--surface-2);border-radius:var(--r);padding:28px 30px;box-shadow:var(--shadow)}
+.hero__note p{margin:0}
+.hero__note p+p{margin-top:1.05em}
 
 .glance{background:var(--surface)}
 .glance__in{padding-block:clamp(30px,3.6vw,46px)}
@@ -314,13 +316,8 @@ p{margin:0 0 1em}
         </div>
       </div>
       <aside class="hero__note">
-        I don't resell somebody's product.<br>
-        I design the system, install it,<br>
-        tune it to how you actually live,<br>
-        and stay on to keep it quiet.<br><br>
-        Everything runs locally,<br>
-        in your house, on your hardware.<br>
-        No subscription owns your lights.
+        <p>I don't resell somebody's product. I design the system, install it, tune it to how you actually live, and stay on to keep it quiet.</p>
+        <p>Everything runs locally, in your house, on your hardware. No subscription owns your lights.</p>
       </aside>
     </div>
   </section>
