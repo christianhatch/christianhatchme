@@ -17,6 +17,7 @@ permalink: pretty
 
 # Exclude from processing
 exclude:
+  - docs/          # design notes, not part of the published site
   - Gemfile
   - Gemfile.lock
   - node_modules
