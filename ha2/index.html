@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Quiet House — Smart home design and installation, Greater Boston</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Hanken+Grotesk:ital,wght@0,300..700;1,300..600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#17251e;
+  --surface:#1d2e25;
+  --surface-2:#24382d;
+  --surface-3:#2d4436;
+  --ink:#f1ede1;
+  --ink-70:rgba(241,237,225,.86);
+  --ink-45:rgba(241,237,225,.68);
+  --rule:rgba(241,237,225,.17);
+  --chip:rgba(241,237,225,.05);
+  --chip-edge:rgba(241,237,225,.28);
+  --petrol:#d6b071;
+  --petrol-hi:#e7c68d;
+
+  --s-occupancy:#82b6f0;
+  --s-lights:#efc06a;
+  --s-climate:#6fc6d8;
+  --s-fan:#4fcfb0;
+  --s-air:#a8db8a;
+  --s-media:#bca2e8;
+
+  --display:"Fraunces","Iowan Old Style",Georgia,serif;
+  --body:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+
+  --r:20px;
+  --r-sm:14px;
+  --shadow:0 1px 2px rgba(0,0,0,.24),0 14px 34px rgba(0,0,0,.26);
+  --gut:clamp(20px,5vw,64px);
+  --stack:clamp(66px,9vw,136px);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:92px}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:clamp(16px,1.05vw,17.5px);
+  line-height:1.72;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+::selection{background:var(--petrol);color:var(--paper)}
+:focus-visible{outline:2px solid var(--petrol);outline-offset:3px;border-radius:6px}
+
+.wrap{max-width:1160px;margin:0 auto;padding-inline:var(--gut)}
+.section{padding-block:var(--stack)}
+.rule{height:1px;background:var(--rule);border:0;margin:0}
+
+.eyebrow{
+  font-family:var(--body);font-size:11.5px;font-weight:600;
+  letter-spacing:.15em;text-transform:uppercase;color:var(--petrol);
+  margin:0 0 22px;display:flex;align-items:center;gap:11px;
+}
+.eyebrow::before{content:"";width:20px;height:1px;background:var(--petrol);opacity:.55;flex:none}
+
+h1,h2,h3,h4{
+  font-family:var(--display);font-weight:500;line-height:1.06;margin:0;
+  letter-spacing:-.012em;
+  font-variation-settings:"SOFT" 100,"WONK" 0,"opsz" 48;
+}
+h2{font-size:clamp(31px,4.3vw,50px)}
+h3{font-size:clamp(21px,2.1vw,26px);line-height:1.2}
+p{margin:0 0 1em}
+.lede{font-size:clamp(17.5px,1.5vw,21px);line-height:1.6;color:var(--ink-70);max-width:62ch}
+.small{font-size:15px;line-height:1.65;color:var(--ink-70)}
+.mono{font-family:var(--body);font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-45)}
+
+.bar{position:sticky;top:0;z-index:60;background:rgba(23,37,30,.9);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--rule)}
+.bar__in{display:flex;align-items:center;justify-content:space-between;gap:24px;height:68px}
+.mark{display:flex;align-items:baseline;gap:10px;text-decoration:none;white-space:nowrap;flex:none}
+.mark__name{font-family:var(--display);font-weight:500;font-size:19px;font-variation-settings:"SOFT" 100,"opsz" 20}
+.mark__loc{font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-45)}
+.bar__nav{display:flex;gap:6px;align-items:center;white-space:nowrap}
+.bar__nav a{
+  font-size:13.5px;font-weight:500;line-height:1;text-decoration:none;color:var(--ink-70);
+  white-space:nowrap;padding:11px 13px;border-radius:999px;
+  border:1px solid var(--rule);background:var(--chip);
+  transition:color .18s ease,background .18s ease,border-color .18s ease;
+}
+.bar__nav a:hover{color:var(--ink);background:var(--surface-3);border-color:var(--chip-edge)}
+/* Below this the five labels can no longer sit on one line, so drop to
+   the brand and the call to action rather than letting anything wrap. */
+@media(max-width:1060px){.bar__nav a:not(.btn--bar){display:none}}
+/* The location tag is the first thing to go when the row gets tight. */
+@media(max-width:1340px){.mark__loc{display:none}}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:var(--body);
+  font-size:15px;font-weight:500;line-height:1.15;letter-spacing:.005em;text-decoration:none;
+  white-space:nowrap;
+  border:1px solid var(--petrol);background:var(--petrol);color:#16251d;
+  padding:14px 26px;border-radius:999px;transition:background .2s ease,color .2s ease,border-color .2s ease;
+}
+.btn:hover{background:var(--petrol-hi);border-color:var(--petrol-hi)}
+.btn--ghost{background:transparent;color:var(--petrol)}
+.btn--ghost:hover{background:var(--petrol);color:#16251d}
+.btn--bar{padding:0 18px;height:40px;font-size:13.5px;flex:none;margin-left:5px}
+
+.hero{
+  padding-top:clamp(40px,4.6vw,72px);padding-bottom:clamp(30px,3.4vw,48px);
+  background:radial-gradient(1000px 460px at 12% -18%,rgba(214,176,113,.15),transparent 68%);
+}
+.hero h1{font-size:clamp(42px,7.2vw,88px);letter-spacing:-.022em;max-width:13ch;margin-bottom:24px}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--petrol)}
+.hero__grid{display:grid;grid-template-columns:1fr;gap:36px}
+@media(min-width:900px){.hero__grid{grid-template-columns:1.12fr .72fr;gap:60px;align-items:end}}
+.hero__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero__note{font-size:16px;line-height:1.72;color:var(--ink-70);background:var(--surface-2);border-radius:var(--r);padding:28px 30px;box-shadow:var(--shadow)}
+.hero__note p{margin:0}
+.hero__note p+p{margin-top:1.05em}
+.hero__vouch{
+  margin-top:18px;padding-top:16px;border-top:1px solid var(--rule);
+  color:var(--petrol);font-family:var(--display);font-style:italic;font-weight:400;
+  font-size:17px;line-height:1.4;font-variation-settings:"SOFT" 100,"opsz" 18;
+}
+
+.glance{background:var(--surface)}
+.glance__in{padding-block:clamp(30px,3.6vw,46px)}
+.glance__head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:14px;margin-bottom:24px}
+.tiles{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(min-width:640px){.tiles{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:1000px){
+  .tiles{grid-template-columns:repeat(6,minmax(0,1fr))}
+  /* Six across is a tight fit: trim the padding and the mark row so a
+     tile's own content can never be wider than its column. */
+  .tile{padding:15px 13px 14px}
+  .slots{gap:6px}
+  .slot{width:16px;height:16px}
+}
+.tile{background:var(--surface-2);border-radius:var(--r-sm);padding:17px 16px 16px;display:flex;flex-direction:column;gap:14px;min-height:120px;min-width:0;box-shadow:var(--shadow)}
+.tile__top{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.tile__room{font-family:var(--display);font-weight:500;font-size:15.5px;font-variation-settings:"SOFT" 100,"opsz" 16;min-width:0;overflow:hidden;text-overflow:ellipsis}
+.tile__temp{font-size:12.5px;color:var(--ink-45);flex:none}
+.slots{display:flex;gap:8px;margin-top:auto}
+.slot{width:18px;height:18px;flex:none;color:var(--ink-45);opacity:.3;transition:opacity .8s ease,color .8s ease}
+.slot svg{width:100%;height:100%;display:block;fill:currentColor}
+.slot.is-on{opacity:1}
+.slot.is-void{opacity:0}
+.slot--occupancy.is-on{color:var(--s-occupancy)}
+.slot--lights.is-on{color:var(--s-lights)}
+.slot--climate.is-on{color:var(--s-climate)}
+.slot--fan.is-on{color:var(--s-fan)}
+.slot--air.is-on{color:var(--s-air)}
+.slot--media.is-on{color:var(--s-media)}
+.key{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.key__i{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-70);background:var(--paper);border-radius:999px;padding:6px 14px}
+.key__d{width:9px;height:9px;border-radius:50%;flex:none}
+
+.split{display:grid;gap:32px}
+@media(min-width:900px){.split{grid-template-columns:.8fr 1.2fr;gap:60px}}
+.split--even{grid-template-columns:1fr}
+@media(min-width:900px){.split--even{grid-template-columns:1fr 1fr;gap:60px}}
+
+.cards{display:grid;gap:14px;margin-top:46px;grid-template-columns:1fr}
+@media(min-width:700px){.cards{grid-template-columns:1fr 1fr}}
+@media(min-width:1040px){.cards{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--surface-2);border-radius:var(--r);padding:32px 30px 34px;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+.card .card__fig{
+  display:flex;align-items:center;gap:11px;margin:0 0 12px;
+  font-family:var(--display);font-weight:500;line-height:1;color:var(--petrol);
+  font-size:clamp(29px,3.2vw,38px);letter-spacing:-.015em;
+  font-variation-settings:"SOFT" 100,"opsz" 40;
+}
+.card__dot{width:9px;height:9px;border-radius:50%;flex:none;background:var(--ink-45)}
+.card h3{margin-bottom:11px;font-size:clamp(19px,1.8vw,22px)}
+.card p{color:var(--ink-70);font-size:15.5px;margin:0}
+
+.spec{background:var(--surface)}
+.figs{display:grid;gap:14px;margin-top:46px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:760px){.figs{grid-template-columns:repeat(4,1fr)}}
+.fig{background:var(--surface-2);border-radius:var(--r);padding:28px 24px 26px;box-shadow:var(--shadow)}
+.fig__n{font-family:var(--display);font-weight:500;font-size:clamp(34px,4.4vw,54px);line-height:1;display:block;color:var(--petrol);font-variation-settings:"SOFT" 100,"opsz" 44}
+.fig__l{font-size:13.5px;color:var(--ink-45);margin-top:14px;display:block;line-height:1.55}
+
+.ledger{margin-top:46px;background:var(--surface-2);border-radius:var(--r);padding:6px 30px;box-shadow:var(--shadow)}
+.row{display:grid;grid-template-columns:1fr;gap:4px 26px;padding:20px 0;border-bottom:1px solid var(--rule)}
+.row:last-child{border-bottom:0}
+@media(min-width:760px){.row{grid-template-columns:190px 1fr;gap:26px;align-items:baseline}}
+.row__k{font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--petrol)}
+.row__v{font-size:16px;color:var(--ink-70);line-height:1.6}
+.row__v code{font-family:var(--body);font-size:15px;font-weight:500;color:var(--ink);background:var(--surface-3);padding:2px 9px;border-radius:999px}
+
+.ways{display:grid;gap:14px;margin-top:46px;grid-template-columns:1fr}
+@media(min-width:720px){.ways{grid-template-columns:1fr 1fr}}
+@media(min-width:1080px){.ways{grid-template-columns:repeat(4,1fr)}}
+.way{background:var(--surface-2);border-radius:var(--r);padding:32px 28px 34px;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+.way__k{font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-45);margin-bottom:16px}
+.way h3{font-size:21px;margin-bottom:13px}
+.way p{font-size:15.5px;color:var(--ink-70);margin:0 0 16px}
+.way__note{margin-top:auto;padding-top:16px;border-top:1px solid var(--rule);font-size:13.5px;line-height:1.7;color:var(--ink-45)}
+
+.ask{background:var(--paper)}
+.panel{background:var(--surface-2);border-radius:var(--r);margin-top:46px;padding:clamp(26px,3.6vw,46px);box-shadow:var(--shadow)}
+.panel__k{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-45);margin:0 0 22px}
+.prompts{display:grid;gap:10px}
+.prompts p{
+  margin:0;padding:16px 22px;background:var(--paper);border-radius:var(--r-sm);
+  font-family:var(--display);font-style:italic;font-weight:400;
+  font-size:clamp(17px,1.7vw,20px);line-height:1.5;color:var(--ink);
+  font-variation-settings:"SOFT" 100,"opsz" 22;
+}
+.panel__coda{margin:24px 0 0;font-size:14px;color:var(--ink-45);line-height:1.75}
+
+.steps{display:grid;gap:14px;margin-top:46px;grid-template-columns:1fr}
+@media(min-width:760px){.steps{grid-template-columns:1fr 1fr}}
+@media(min-width:1080px){.steps{grid-template-columns:repeat(4,1fr)}}
+.step{background:var(--surface-2);border-radius:var(--r);padding:30px 26px 32px;box-shadow:var(--shadow)}
+.step__n{font-family:var(--display);font-size:15px;font-weight:500;color:var(--petrol);display:block;margin-bottom:18px;font-variation-settings:"SOFT" 100,"opsz" 16}
+.step h3{font-size:21px;margin-bottom:11px}
+.step p{font-size:15.5px;color:var(--ink-70);margin:0}
+
+.tiers{display:grid;gap:14px;margin-top:46px;grid-template-columns:1fr}
+@media(min-width:860px){.tiers{grid-template-columns:repeat(3,1fr)}}
+.tier{background:var(--surface-2);border-radius:var(--r);padding:34px 30px 36px;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+.tier--feature{background:var(--surface-3)}
+.tier__k{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--petrol);margin-bottom:18px}
+.tier h3{margin-bottom:14px}
+.tier p{color:var(--ink-70);font-size:15.5px}
+.tier ul{list-style:none;margin:16px 0 28px;padding:0;display:grid;gap:10px}
+.tier li{font-size:15px;color:var(--ink-70);padding-left:20px;position:relative;line-height:1.5}
+.tier li::before{content:"";position:absolute;left:0;top:.66em;width:8px;height:2px;border-radius:2px;background:var(--petrol)}
+.tier .btn{margin-top:auto;align-self:flex-start}
+
+.close{background:var(--surface)}
+.close h2{max-width:17ch;margin-bottom:24px}
+.close__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+
+.foot{background:var(--paper);border-top:1px solid var(--rule);padding-block:38px}
+.foot__in{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:baseline}
+.foot p{margin:0;font-size:13.5px;color:var(--ink-45);line-height:1.85}
+
+
+/* Five rules — the page's second beat, so each one has to read in a glance. */
+.rules{margin-top:44px}
+.rule-i{display:grid;grid-template-columns:1fr;gap:7px 48px;padding:24px 0;border-bottom:1px solid var(--rule)}
+@media(min-width:860px){.rule-i{grid-template-columns:.92fr 1.08fr;align-items:baseline}}
+.rule-i:last-of-type{border-bottom:0}
+.rule-n{font-family:var(--display);font-weight:500;font-size:clamp(22px,2.5vw,30px);line-height:1.12;letter-spacing:-.012em;font-variation-settings:"SOFT" 100,"opsz" 32}
+.rule-g{margin:0;font-size:16px;line-height:1.6;color:var(--ink-70)}
+.rules__coda{
+  margin:30px 0 0;max-width:44ch;color:var(--petrol);
+  font-family:var(--display);font-style:italic;font-weight:400;
+  font-size:clamp(18px,1.9vw,23px);line-height:1.45;
+  font-variation-settings:"SOFT" 100,"opsz" 24;
+}
+
+/* When -> then: a spec sheet, not eight paragraphs. */
+.wt{margin-top:44px}
+.wt__r{display:grid;grid-template-columns:1fr;gap:6px 44px;padding:22px 0;border-bottom:1px solid var(--rule)}
+@media(min-width:820px){.wt__r{grid-template-columns:.44fr 1.56fr;align-items:baseline}}
+.wt__r:last-of-type{border-bottom:0}
+.wt__w{font-size:16px;font-weight:500;line-height:1.45;color:var(--petrol)}
+.wt__t{margin:0;font-size:16.5px;line-height:1.62;color:var(--ink-70)}
+.wt__t em{color:var(--ink);font-style:italic}
+
+/* Full-width pull quotes, purely to break the rhythm. */
+.quote{background:var(--surface);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.quote__in{padding-block:clamp(46px,6vw,84px)}
+.quote p{
+  margin:0;max-width:19ch;font-family:var(--display);font-weight:500;
+  font-size:clamp(30px,5vw,58px);line-height:1.08;letter-spacing:-.018em;
+  font-variation-settings:"SOFT" 100,"opsz" 56;
+}
+.quote em{font-style:italic;font-weight:400;color:var(--petrol)}
+.quote__sub{margin-top:18px;max-width:42ch;font-family:var(--body);font-size:1rem;line-height:1.6;font-weight:400;letter-spacing:normal;color:var(--ink-45)}
+
+/* Rules 6-8 live down here, beside the build they describe. */
+.mini{margin-top:44px;display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:860px){.mini{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.mini__i{background:var(--surface-2);border-radius:var(--r);padding:26px 26px 28px;box-shadow:var(--shadow)}
+.mini__i h4{font-family:var(--display);font-size:18.5px;line-height:1.2;margin-bottom:9px}
+.mini__i p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink-70)}
+
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:28px}
+.chips span{font-size:14px;color:var(--ink-70);background:var(--surface-2);border-radius:999px;padding:10px 18px}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- icon set: one glyph per state slot -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-occupancy" viewBox="0 0 24 24"><path d="M12 2.6a2.3 2.3 0 1 1 0 4.6 2.3 2.3 0 0 1 0-4.6ZM9.4 8.4h5.2c1 0 1.8.8 1.8 1.8v4.3h-1.9v6.9h-5V14.5H7.6v-4.3c0-1 .8-1.8 1.8-1.8Z"/></symbol>
+  <symbol id="i-lights" viewBox="0 0 24 24"><path d="M12 2.5a6.6 6.6 0 0 0-3.9 11.9c.5.4.8 1 .8 1.6v.6h6.2v-.6c0-.6.3-1.2.8-1.6A6.6 6.6 0 0 0 12 2.5ZM8.9 18.1h6.2v1.4H8.9v-1.4Zm.8 2.8h4.6a2.3 2.3 0 0 1-4.6 0Z"/></symbol>
+  <symbol id="i-climate" viewBox="0 0 24 24"><path d="M11.1 1.8h1.8v5.1l2.2-2.2 1.3 1.3-3.5 3.5v2.1l1.8-1 1.3-4.8 1.7.5-.8 3 4.4-2.6.9 1.6-4.4 2.6 3 .8-.5 1.7-4.8-1.3-1.8 1 1.8 1 4.8-1.3.5 1.7-3 .8 4.4 2.6-.9 1.6-4.4-2.6.8 3-1.7.5-1.3-4.8-1.8-1v2.1l3.5 3.5-1.3 1.3-2.2-2.2v5.1h-1.8v-5.1l-2.2 2.2-1.3-1.3 3.5-3.5v-2.1l-1.8 1-1.3 4.8-1.7-.5.8-3-4.4 2.6-.9-1.6 4.4-2.6-3-.8.5-1.7 4.8 1.3 1.8-1-1.8-1-4.8 1.3-.5-1.7 3-.8-4.4-2.6.9-1.6 4.4 2.6-.8-3 1.7-.5 1.3 4.8 1.8 1v-2.1L7.6 6l1.3-1.3 2.2 2.2V1.8Z"/></symbol>
+  <symbol id="i-fan" viewBox="0 0 24 24"><path d="M12 10.2a1.8 1.8 0 1 1 0 3.6 1.8 1.8 0 0 1 0-3.6Zm-.9-1.7c0-2.9-.6-5.1-.1-6 .6-1.1 3.3-.9 3.6.8.3 1.5-1 2.9-1.6 5.2a3.6 3.6 0 0 0-1.9 0Zm-1.4 2.4c-2.6-1.3-4.8-1.8-5.4-2.7-.7-1 .8-3.2 2.4-2.6 1.5.5 1.9 2.4 3.6 4.1a3.6 3.6 0 0 0-.6 1.2Zm.9 3.4c-1.5 2.4-2.9 4.2-2.9 5.2 0 1.3 2.4 2.4 3.4 1 .9-1.2.3-3.1.9-5.4a3.6 3.6 0 0 1-1.4-.8Zm3.5-.7c2.8.7 5 .7 5.8 1.4 1 .9.1 3.4-1.6 3.2-1.5-.2-2.3-2-4.3-3.3a3.6 3.6 0 0 0 .1-1.3Z"/></symbol>
+  <symbol id="i-air" viewBox="0 0 24 24"><path d="M3 7.4h10.4a2.7 2.7 0 1 0-2.6-3.4l-1.8-.5A4.6 4.6 0 1 1 13.4 9.3H3V7.4Zm0 4.1h15.2a2.6 2.6 0 1 1 0 5.2h-1.4v-1.9h1.4a.7.7 0 1 0 0-1.4H3v-1.9Zm0 4.4h7.6a3.2 3.2 0 1 1-3.1 4l1.8-.5a1.3 1.3 0 1 0 1.3-1.6H3v-1.9Z"/></symbol>
+  <symbol id="i-media" viewBox="0 0 24 24"><path d="M19.6 2.6v12.2a3.6 3.6 0 1 1-1.9-3.2V6.9l-7.8 1.7v8.8a3.6 3.6 0 1 1-1.9-3.2V5.4l11.6-2.8Z"/></symbol>
+</svg>
+
+<header class="bar">
+  <div class="wrap bar__in">
+    <a class="mark" href="#top">
+      <span class="mark__name">Quiet House</span>
+      <span class="mark__loc">Somerville, MA</span>
+    </a>
+    <nav class="bar__nav" aria-label="Main">
+      <a href="#whenthen">What it does</a>
+      <a href="#rules">The rules</a>
+      <a href="#control">How you control it</a>
+      <a href="#reference">The demo house</a>
+      <a href="#engage">Engagements</a>
+      <a class="btn btn--bar" href="#contact">Book a walkthrough</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO ─────────────────────────────────── -->
+  <section class="wrap hero">
+    <p class="eyebrow">Smart home design, installation and long-term care — Greater Boston</p>
+    <div class="hero__grid">
+      <div>
+        <h1>Your house <em>already did it</em>.</h1>
+        <p class="lede">Did I leave the door unlocked. Is the freezer still running. Did anyone turn the heat down. In a well-built house you stop asking — it has already handled all three, and it comes and finds you if it couldn't.</p>
+        <div class="hero__cta">
+          <a class="btn" href="#contact">Book a walkthrough</a>
+          <a class="btn btn--ghost" href="#reference">See the demo house</a>
+        </div>
+      </div>
+      <aside class="hero__note">
+        <p>I design the system, install it, and tune it to how you actually live. I don't resell somebody else's product.</p>
+        <p>It doesn't guess. I watch how your household really moves through the house and build around that, until it looks like guessing.</p>
+        <p>Everything runs on a computer in your house. No monthly fees, and no company can switch off a feature you paid for.</p>
+        <p class="hero__vouch">Nothing goes into your house that hasn't run in mine first.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- WHEN → THEN ──────────────────────────── -->
+  <section class="wrap section" id="whenthen">
+    <div class="split">
+      <div><p class="eyebrow">Nobody asked for any of this</p></div>
+      <div>
+        <h2 style="margin-bottom:20px">Six things that happen while you are thinking about something else.</h2>
+        <p class="lede">None of these needs you awake, present, or holding a phone. They happen because every device is in one system, where anything can trigger anything else — a lamp can warn you about the air, a speaker can warn you about the freezer.</p>
+      </div>
+    </div>
+
+    <div class="wt">
+      <div class="wt__r">
+        <p class="wt__w">Twenty minutes before your alarm</p>
+        <p class="wt__t">Lights rise so slowly you can't catch them moving, and the curtains part an inch at a time. You didn't set anything the night before. Or lights straight to full and heavy metal at 6am, if that's your thing.</p>
+      </div>
+      <div class="wt__r">
+        <p class="wt__w">The mailbox door opens</p>
+        <p class="wt__t">The nearest speaker says <em>you've got mail</em>, so nobody walks down to an empty box in February. Nobody checked. Nobody had to.</p>
+      </div>
+      <div class="wt__r">
+        <p class="wt__w">CO₂ climbs at your desk — the reason a closed room makes you foggy</p>
+        <p class="wt__t">The desk lamp pulses amber twice. Ignore it and the house turns your music down and tells you out loud to open a window.</p>
+      </div>
+      <div class="wt__r">
+        <p class="wt__w">The freezer starts warming up</p>
+        <p class="wt__t">Every speaker in the house says so, and keeps saying so until you deal with it. A freezer that quits on a Friday costs you everything in it.</p>
+      </div>
+      <div class="wt__r">
+        <p class="wt__w">The sun hits the west windows</p>
+        <p class="wt__t">The shades close before the room gets hot. You'll notice once: the afternoon it stopped being unbearable at four o'clock.</p>
+      </div>
+      <div class="wt__r">
+        <p class="wt__w">You feel like it</p>
+        <p class="wt__t">Every light goes rainbow, the star projector comes on, the lava lamps wake up, and the party playlist starts.</p>
+      </div>
+    </div>
+
+    <p class="small" style="margin-top:26px;max-width:60ch">All six run in my own house today, and not one of them starts with somebody pressing something. Describe what you want and it can probably be built.</p>
+  </section>
+
+  <!-- FIVE RULES ───────────────────────────── -->
+  <section class="wrap section" id="rules">
+    <div class="split">
+      <div><p class="eyebrow">You are always in control</p></div>
+      <div>
+        <h2 style="margin-bottom:20px">Five rules I don't bend.</h2>
+        <p class="lede">The house handles almost everything on its own. These five rules are what make that a choice you keep rather than one you hand over — every one of them puts the controls back in your hand the second you want them.</p>
+      </div>
+    </div>
+
+    <div class="rules">
+      <div class="rule-i">
+        <p class="rule-n">Nothing requires an app.</p>
+        <p class="rule-g">The app is optional. Nothing in your house works only through a phone.</p>
+      </div>
+      <div class="rule-i">
+        <p class="rule-n">Every device keeps a physical control.</p>
+        <p class="rule-g">A real switch where a switch belongs, and it still works when the Wi-Fi or the internet is down.</p>
+      </div>
+      <div class="rule-i">
+        <p class="rule-n">A guest shouldn't have to be told anything.</p>
+        <p class="rule-g">They use your house like any other, and you explain nothing.</p>
+      </div>
+      <div class="rule-i">
+        <p class="rule-n">Everything runs locally.</p>
+        <p class="rule-g">On a computer in your house. If your internet drops, your lights, heat and switches keep working.</p>
+      </div>
+      <div class="rule-i">
+        <p class="rule-n">Full control from anywhere.</p>
+        <p class="rule-g">From a hotel abroad you can see and control everything, exactly as you would standing in your kitchen.</p>
+      </div>
+      <p class="rules__coda">The first three are the hard ones. Most installers break all three: the app becomes mandatory, the wall switch stops doing anything, and your guests can't work out the lights.</p>
+    </div>
+  </section>
+
+  <!-- WHAT IT BUYS YOU ─────────────────────── -->
+  <section class="wrap section" id="what">
+    <div class="split">
+      <div><p class="eyebrow">What it actually buys you</p></div>
+      <div>
+        <h2 style="margin-bottom:20px">Not gadgets. A house that already handled it.</h2>
+        <p class="lede">A shorter list to hold in your head, and a house that tells you when something is wrong.</p>
+      </div>
+    </div>
+
+    <p class="small" style="margin-top:30px">Every figure below is from my own house, running today.</p>
+
+    <div class="cards">
+
+      <article class="card">
+        <p class="card__fig"><span class="card__dot" style="background:var(--s-occupancy)"></span>Nothing to press</p>
+        <h3>The house empties itself</h3>
+        <p>You just leave. Lights, music and the forgotten space heater switch off once the sensors confirm every room is empty — never while a guest is still sitting in one.</p>
+      </article>
+
+      <article class="card">
+        <p class="card__fig"><span class="card__dot" style="background:var(--s-lights)"></span>12 rooms</p>
+        <h3>Rooms lit before you walk in</h3>
+        <p>Lights that stay on while you're sitting still reading, warm up after sunset, and switch off when the room is empty.</p>
+      </article>
+
+      <article class="card">
+        <p class="card__fig"><span class="card__dot" style="background:var(--s-air)"></span>4 systems</p>
+        <h3>Steam, damp and afternoon heat, handled</h3>
+        <p>The bathroom fan starts when the shower steams up, the humidifiers hold a set level, and the west-facing shades close before the afternoon sun heats the room.</p>
+      </article>
+
+      <article class="card">
+        <p class="card__fig"><span class="card__dot" style="background:var(--s-media)"></span>10 rooms</p>
+        <h3>Music in every room</h3>
+        <p>Music follows you from room to room, pauses when you leave, and picks up where you left off.</p>
+      </article>
+
+      <article class="card">
+        <p class="card__fig"><span class="card__dot" style="background:var(--s-fan)"></span>5 alerts</p>
+        <h3>You hear about it first</h3>
+        <p>The freezer unplugged behind the shelf, a leak under a sink nobody opens, the laundry that finished two hours ago.</p>
+      </article>
+
+      <article class="card">
+        <p class="card__fig"><span class="card__dot" style="background:var(--s-climate)"></span>33 appliances</p>
+        <h3>You know what each thing costs</h3>
+        <p>A live dollar figure per appliance — the chest freezer, the EV charger, the dehumidifier that runs all August.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- PULL QUOTE ───────────────────────────── -->
+  <section class="quote">
+    <div class="wrap quote__in">
+      <p>The best version of this is one you <em>stop noticing</em>.</p>
+      <p class="quote__sub">That is what quiet means here: the house did the thing, and you never found out.</p>
+    </div>
+  </section>
+
+  <!-- HOW YOU CONTROL IT ───────────────────── -->
+  <section class="wrap section" id="control">
+    <div class="split">
+      <div><p class="eyebrow">How you control it</p></div>
+      <div>
+        <h2 style="margin-bottom:20px">Four ways to control the house. The best one is not touching anything.</h2>
+        <p class="lede">The house doing it without being asked, a switch on the wall, any screen you own, or your voice. All four are always there. You will mostly use the first.</p>
+      </div>
+    </div>
+
+    <div class="ways">
+      <div class="way">
+        <p class="way__k">Almost always</p>
+        <h3>The house does it for you</h3>
+        <p>It tracks who's home, the daylight, the humidity and the hour, then turns lights, fans and heat on and off without being asked.</p>
+      </div>
+      <div class="way">
+        <p class="way__k">To change something</p>
+        <h3>A switch on the wall</h3>
+        <p>Real dimmers and buttons where switches have always been, working the same for everyone.</p>
+      </div>
+      <div class="way">
+        <p class="way__k">When you want detail</p>
+        <h3>Any screen you own</h3>
+        <p>Phone, tablet, laptop or browser — nothing to install, and an interface built for each room.</p>
+      </div>
+      <div class="way">
+        <p class="way__k">When your hands are full</p>
+        <h3>Your voice</h3>
+        <p>It runs on the computer in your house. Not Alexa: nothing you say leaves the building, and there is no account behind it.</p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <p class="panel__k">Or connect ChatGPT or Claude to the house — things people actually ask</p>
+      <div class="prompts">
+        <p>How many times did I do laundry last month?</p>
+        <p>How much has air conditioning cost me this summer?</p>
+        <p>Turn off the air conditioning downstairs.</p>
+        <p>Set every light in the house to rainbow.</p>
+        <p>Which rooms were occupied more than four hours yesterday, and run the dehumidifier in any that sat above 55% humidity.</p>
+      </div>
+      <p class="panel__coda">Plain English, answered from data that never left your house. You can give it a name, a voice and a personality of your choosing, or turn that off entirely.</p>
+    </div>
+  </section>
+
+  <!-- GLANCE STRIP ─────────────────────────── -->
+  <section class="glance" aria-labelledby="glance-h">
+    <div class="wrap glance__in">
+      <div class="glance__head">
+        <h2 id="glance-h" style="font-size:clamp(21px,2.1vw,26px)">For the once a week you do want to look.</h2>
+        <span class="mono">The home screen — six rooms from my own house</span>
+      </div>
+
+      <div class="tiles" id="tiles" role="img" aria-label="A row of room tiles. Each room shows the same six icons in the same order: occupancy, lights, climate, fan, air, and media. Each icon lights up in its own color when that system is running, and stays dim when it is not."></div>
+
+      <div class="key" aria-hidden="true">
+        <span class="key__i"><span class="key__d" style="background:var(--s-occupancy)"></span>Someone's there</span>
+        <span class="key__i"><span class="key__d" style="background:var(--s-lights)"></span>Lights on</span>
+        <span class="key__i"><span class="key__d" style="background:var(--s-climate)"></span>Cooling / heating</span>
+        <span class="key__i"><span class="key__d" style="background:var(--s-fan)"></span>Fan</span>
+        <span class="key__i"><span class="key__d" style="background:var(--s-air)"></span>Air cleaning</span>
+        <span class="key__i"><span class="key__d" style="background:var(--s-media)"></span>Music</span>
+      </div>
+
+      <p class="small" style="margin-top:22px;max-width:60ch">Every room, six icons, always in the same order. Learn it once and you can read the whole house in a second — then go back to not thinking about it.</p>
+    </div>
+  </section>
+
+  <!-- REFERENCE BUILD ──────────────────────── -->
+  <section class="spec" id="reference">
+    <div class="wrap section">
+      <p class="eyebrow">Reference installation No. 1 — Fenwick, Winter Hill</p>
+      <div class="split">
+        <div><h2>The demo house is my own house.</h2></div>
+        <div>
+          <p class="lede">A two-family house in Somerville, rebuilt as one local system over eighteen months. Every device has run here for months before I'll recommend it, so you get what survived rather than what reviewed well. Live figures, not a brochure.</p>
+        </div>
+      </div>
+
+      <div class="figs">
+        <div class="fig"><span class="fig__n">121</span><span class="fig__l">Automations that run without you</span></div>
+        <div class="fig"><span class="fig__n">3,043</span><span class="fig__l">Readings tracked — every door, outlet and temperature</span></div>
+        <div class="fig"><span class="fig__n">302</span><span class="fig__l">Devices &amp; services connected</span></div>
+        <div class="fig"><span class="fig__n">100%</span><span class="fig__l">Runs locally — nothing needs the cloud</span></div>
+      </div>
+
+      <div class="ledger">
+        <div class="row"><span class="row__k">Lighting</span><span class="row__v">140 lights across Hue, Zigbee, Lutron and Matter — triggered by people rather than switches.</span></div>
+        <div class="row"><span class="row__k">Sensing</span><span class="row__v">953 sensors and 256 door, presence and leak detectors — tuned so the cat doesn't set off the lights.</span></div>
+        <div class="row"><span class="row__k">Climate &amp; air</span><span class="row__v">Air conditioning everywhere with left-on alerts, a steam-sensing bathroom fan, three purifiers, humidifiers holding a level.</span></div>
+        <div class="row"><span class="row__k">Energy</span><span class="row__v">33 appliances measured one by one with live running cost, plus whole-house water and an EV charger.</span></div>
+        <div class="row"><span class="row__k">Sound &amp; video</span><span class="row__v">Sonos in 10 rooms, three televisions, four cameras, and 52 one-tap routines — <code>Good&nbsp;Night</code>, <code>Everything&nbsp;Off</code>.</span></div>
+        <div class="row"><span class="row__k">Interfaces</span><span class="row__v">Six purpose-built views, identical on phone, tablet, laptop and browser, plus one wall panel.</span></div>
+        <div class="row"><span class="row__k">Voice &amp; AI</span><span class="row__v">Spoken requests answered out loud, all on site, plus a plain-language connection for any AI app.</span></div>
+        <div class="row"><span class="row__k">Self-monitoring</span><span class="row__v">Dying batteries, quiet devices and waiting updates all raise their own alerts.</span></div>
+        <div class="row"><span class="row__k">Compatibility</span><span class="row__v">Zigbee · Thread &amp; Matter · Bluetooth · Wi-Fi · HomeKit · Lutron · Z-Wave-ready — every major wireless standard, mixed on purpose, so you are never locked to one brand.</span></div>
+      </div>
+
+      <p class="eyebrow" style="margin-top:56px">Three more rules, under the hood</p>
+      <div class="mini" style="margin-top:0">
+        <div class="mini__i">
+          <h4>Your house comes with you.</h4>
+          <p>Your phone connects back to the house over a private link, so everything works abroad exactly as it does at home.</p>
+        </div>
+        <div class="mini__i">
+          <h4>Your data never leaves the house.</h4>
+          <p>Nothing is sold, nothing is studied, nothing is handed to a company as the hidden price of a feature. There is nothing to opt out of.</p>
+        </div>
+        <div class="mini__i">
+          <h4>Years of history, six things on screen.</h4>
+          <p>Every reading is kept and searchable the moment you want it. The rest of the time the screen shows six things.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PULL QUOTE ───────────────────────────── -->
+  <section class="quote">
+    <div class="wrap quote__in">
+      <p>Opinionated, and <em>boring</em> on purpose.</p>
+      <p class="quote__sub">Nothing to fiddle with, nothing to fix.</p>
+    </div>
+  </section>
+
+  <!-- HOW IT GOES ──────────────────────────── -->
+  <section class="wrap section" id="work">
+    <div class="split">
+      <div><p class="eyebrow">The engagement, start to finish</p></div>
+      <div>
+        <h2 style="margin-bottom:20px">Four stages, then it runs itself.</h2>
+        <p class="lede">A smart home fails the same way every time: clever workarounds, then the person who built it leaves. I build the version another person could take over — standard parts, documented, no tricks.</p>
+      </div>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <span class="step__n">01</span>
+        <h3>Walkthrough</h3>
+        <p>Half a day watching how you move through the house. No equipment discussed yet.</p>
+      </div>
+      <div class="step">
+        <span class="step__n">02</span>
+        <h3>System plan</h3>
+        <p>What gets sensed, what it costs, what phase it lands in, and what I recommend you skip.</p>
+      </div>
+      <div class="step">
+        <span class="step__n">03</span>
+        <h3>Build</h3>
+        <p>Installed in phases, each ending with the thing working — not wires in a closet.</p>
+      </div>
+      <div class="step">
+        <span class="step__n">04</span>
+        <h3>Tuning &amp; hand-off</h3>
+        <p>Two weeks living with it, then we fix the timings that annoy you. Documentation and access are yours.</p>
+      </div>
+    </div>
+
+    <div class="chips">
+      <span>Nothing held together with workarounds</span>
+      <span>You approve before I touch anything</span>
+      <span>Everything in one system, not five apps</span>
+      <span>Tuned to your actual life</span>
+    </div>
+  </section>
+
+  <!-- ENGAGEMENTS ──────────────────────────── -->
+  <section class="wrap section" id="engage">
+    <div class="split">
+      <div><p class="eyebrow">Engagements</p></div>
+      <div>
+        <h2 style="margin-bottom:20px">Three ways to work together.</h2>
+        <p class="lede">I take a few houses at a time, because the tuning takes weeks and can't be rushed.</p>
+      </div>
+    </div>
+
+    <div class="tiers">
+      <div class="tier">
+        <p class="tier__k">Start here</p>
+        <h3>Assessment</h3>
+        <p>A walkthrough and a written system plan.</p>
+        <ul>
+          <li>Half-day on site</li>
+          <li>Room-by-room plan of what's possible</li>
+          <li>Phased plan with real budgets</li>
+          <li>Honest list of what to skip</li>
+          <li>Credited toward a build</li>
+        </ul>
+        <a class="btn btn--ghost" href="#contact">Get in touch</a>
+      </div>
+
+      <div class="tier tier--feature">
+        <p class="tier__k">Most clients</p>
+        <h3>Design &amp; build</h3>
+        <p>The whole system, installed and tuned around how your household actually runs.</p>
+        <ul>
+          <li>Everything in Assessment</li>
+          <li>Equipment chosen, bought and installed</li>
+          <li>Lighting, climate, sound, shades, door and leak sensors</li>
+          <li>Energy and running cost, appliance by appliance</li>
+          <li>Interfaces for every device you own</li>
+          <li>Physical controls in every room</li>
+          <li>Two weeks of live tuning</li>
+          <li>Full documentation, handed over</li>
+        </ul>
+        <a class="btn" href="#contact">Book a walkthrough</a>
+      </div>
+
+      <div class="tier">
+        <p class="tier__k">Ongoing</p>
+        <h3>Stewardship</h3>
+        <p>Monthly retainer. You never become the person who has to fix it.</p>
+        <ul>
+          <li>Monitoring, updates and backups</li>
+          <li>Battery and device replacement</li>
+          <li>New automations as life changes</li>
+          <li>Priority response when something breaks</li>
+          <li>Quarterly review of what's actually used</li>
+        </ul>
+        <a class="btn btn--ghost" href="#contact">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSE ────────────────────────────────── -->
+  <section class="close" id="contact">
+    <div class="wrap section">
+      <div class="split split--even">
+        <div>
+          <p class="eyebrow">Book a walkthrough</p>
+          <h2>Tell me what quietly bothers you about your house.</h2>
+          <p class="lede">Start with the two or three things that annoy you now. That is usually the whole brief.</p>
+          <div class="close__cta">
+            <a class="btn" href="mailto:hello@quiethouse.co">hello@quiethouse.co</a>
+            <a class="btn btn--ghost" href="tel:+16175550142">+1 617 555 0142</a>
+          </div>
+        </div>
+        <div>
+          <div class="ledger" style="margin-top:0">
+            <div class="row"><span class="row__k">Serving</span><span class="row__v">Greater Boston, the North Shore, and the Cape by arrangement.</span></div>
+            <div class="row"><span class="row__k">Good fit</span><span class="row__v">Renovations, new purchases, and houses where the thermostat, the lights and the locks are three separate apps.</span></div>
+            <div class="row"><span class="row__k">Not a fit</span><span class="row__v">One-off device installs, or anyone who wants the cheapest version.</span></div>
+            <div class="row"><span class="row__k">Capacity</span><span class="row__v">Three builds at a time.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <p>Quiet House — Residential systems design<br>Somerville, Massachusetts</p>
+    <p>Every figure on this page is live from my own house<br>Runs locally. Tied to no one brand. Yours to keep.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var SLOTS = ["occupancy","lights","climate","fan","air","media"];
+
+  // Room set and hardware coverage mirror the reference installation:
+  // a room only shows a mark for a system it actually has.
+  var ROOMS = [
+    {name:"Living Room", temp:"73°", has:["occupancy","lights","climate","fan","media"]},
+    {name:"Kitchen",     temp:"75°", has:["occupancy","lights","fan","media"]},
+    {name:"Office",      temp:"72°", has:["occupancy","lights","climate","fan","air","media"]},
+    {name:"Bedroom",     temp:"70°", has:["occupancy","lights","climate","fan","air","media"]},
+    {name:"Sunroom",     temp:"78°", has:["occupancy","lights","fan","media"]},
+    {name:"Basement",    temp:"66°", has:["lights","air"]}
+  ];
+
+  // Plausible resting states, so the strip reads like a house at 8pm.
+  var STATE = [
+    {occupancy:1,lights:1,climate:1,fan:1,media:1},
+    {occupancy:0,lights:1,fan:0,media:0},
+    {occupancy:0,lights:0,climate:0,fan:0,air:1,media:0},
+    {occupancy:0,lights:0,climate:1,fan:1,air:1,media:0},
+    {occupancy:0,lights:0,fan:0,media:0},
+    {lights:0,air:1}
+  ];
+
+  var host = document.getElementById("tiles");
+  if(!host) return;
+
+  ROOMS.forEach(function(room, r){
+    var tile = document.createElement("article");
+    tile.className = "tile";
+
+    var top = document.createElement("div");
+    top.className = "tile__top";
+    top.innerHTML = '<span class="tile__room"></span><span class="tile__temp"></span>';
+    top.firstChild.textContent = room.name;
+    top.lastChild.textContent = room.temp;
+    tile.appendChild(top);
+
+    var row = document.createElement("div");
+    row.className = "slots";
+    SLOTS.forEach(function(slot){
+      var s = document.createElement("span");
+      var present = room.has.indexOf(slot) !== -1;
+      s.className = "slot slot--" + slot + (present ? "" : " is-void");
+      s.setAttribute("data-room", r);
+      s.setAttribute("data-slot", slot);
+      s.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-' + slot + '"></use></svg>';
+      if(present && STATE[r][slot]) s.classList.add("is-on");
+      row.appendChild(s);
+    });
+    tile.appendChild(row);
+    host.appendChild(tile);
+  });
+
+  // Ambient drift: one room changes one thing at a time, slowly.
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(reduce) return;
+
+  var marks = Array.prototype.filter.call(
+    host.querySelectorAll(".slot"),
+    function(el){ return !el.classList.contains("is-void"); }
+  );
+
+  var timer = setInterval(function(){
+    if(document.hidden) return;
+    var el = marks[Math.floor(Math.random() * marks.length)];
+    el.classList.toggle("is-on");
+  }, 2600);
+
+  window.addEventListener("pagehide", function(){ clearInterval(timer); });
+})();
+</script>
+</body>
+</html>
